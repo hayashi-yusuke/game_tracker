@@ -11,6 +11,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.save
+    redirect_to games_path
   end
 
   def show
@@ -26,7 +27,7 @@ class GamesController < ApplicationController
 private
 
   def game_params
-    params.repuire(:game).permit(:name)
+    params.require(:game).permit(:name)
   end
 
 end

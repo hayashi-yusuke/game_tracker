@@ -1,0 +1,5 @@
+<h1>ゲーム詳細</h1>
+
+<%= @game.name %>
+<%= button_to "削除", game_path(@game), method: :delete %>
+<%= link_to "戻る", games_path %>

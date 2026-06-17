@@ -1,0 +1,7 @@
+<h1>ゲーム一覧</h1>
+
+<% @games.each do |game| %>
+  <%= link_to game.name, game_path(game) %>
+<% end %>
+
+<%= link_to "新しいゲームを追加", new_game_path %>

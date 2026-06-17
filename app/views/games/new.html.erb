@@ -1,0 +1,8 @@
+<h1>ゲーム追加</h1>
+
+<%= form_with model: @game do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "追加" %>
+<% end %>
+
+<%= link_to "戻る", games_path %>
