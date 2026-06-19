@@ -16,6 +16,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @current_session = @game.sessions.find_by(ended_at: nil)
   end
 
   def destroy
