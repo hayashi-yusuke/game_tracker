@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :games do
     resources :sessions
+    member do
+      get :stats
+    end
   end
 
   root to: "games#index"

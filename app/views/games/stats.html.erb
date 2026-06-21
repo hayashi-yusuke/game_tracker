@@ -1,0 +1,6 @@
+<h1>プレイ時間</h1>
+
+<% if @total_time >= 3600 %>
+<%= (@total_time / 3600).to_i %>時間
+<% end %>
+<%= (@total_time % 3600 / 60).to_i %>分

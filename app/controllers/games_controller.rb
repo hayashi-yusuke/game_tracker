@@ -19,6 +19,12 @@ class GamesController < ApplicationController
     @current_session = @game.sessions.find_by(ended_at: nil)
   end
 
+  def stats
+    @game = Game.find(params[:id])
+    @sessions = @game.sessions.where.not(ended_at: nil)
+    @total_time = @sessions.sum { |session| session.ended_at - session.started_at}
+  end
+
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
