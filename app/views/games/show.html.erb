@@ -1,11 +1,19 @@
-<h1>ゲーム詳細</h1>
+<h1 class="text-5xl mb-10 text-teal-300">ゲーム詳細</h1>
 
-<%= @game.name %>
+<div class="text-4xl flex flex-col gap-11 mb-10 text-indigo-300 hover:text-amber-300">
+  <%= link_to @game.name, stats_game_path(@game, @current_session) %>
+</div>
+
 <% if @current_session %>
-  <%= button_to "終了", game_session_path(@game, @current_session), method: :patch %>
+  <%= button_to "終了", game_session_path(@game, @current_session), method: :patch, class: "mt-4 w-fit text-xl text-violet-300 border border-violet-300 px-6 py-2 hover:text-lime-300 hover:border-lime-300 cursor-pointer" %>
 <% else %>
-  <%= button_to "開始", game_sessions_path(@game), method: :post %>
+  <%= button_to "開始", game_sessions_path(@game), method: :post, class: "mt-4 w-fit text-xl text-violet-300 border border-violet-300 px-6 py-2 hover:text-lime-300 hover:border-lime-300 cursor-pointer" %>
 <% end %>
-<%= button_to "削除", game_path(@game), method: :delete %>
-<%= link_to "プレイ時間", stats_game_path(@game, @current_session) %>
-<%= link_to "戻る", games_path %>
+
+<div class="flex justify-end mb-10">
+  <%= button_to "削除", game_path(@game), method: :delete, class: "text-red-300 hover:text-orange-500 cursor-pointer" %>
+</div>
+
+<div class="mt-10 text-lg text-indigo-300 hover:text-amber-300">
+  <%= link_to "← 戻る", games_path %>
+</div>

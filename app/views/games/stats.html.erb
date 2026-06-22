@@ -1,6 +1,9 @@
-<h1>プレイ時間</h1>
+<h1 class="text-5xl mb-10 text-teal-300">プレイ時間</h1>
 
-<% if @total_time >= 3600 %>
-<%= (@total_time / 3600).to_i %>時間
-<% end %>
-<%= (@total_time % 3600 / 60).to_i %>分
+<div class="flex text-4xl mb-10 text-indigo-300">
+  合計
+  <% if @total_time >= 3600 %>
+  <%= (@total_time / 3600).to_i %> 時間
+  <% end %>
+  <%= (@total_time % 3600 / 60).to_i %> 分
+</div>
